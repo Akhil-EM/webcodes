@@ -210,6 +210,6 @@ class Student extends Person
         return`name is ${this.name} .id is ${this.id}`;
     }
 }
-
+////creating object for Student
 let ob1=new Student("ajay",007);
 console.log( ob1.printer());
