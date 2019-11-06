@@ -93,7 +93,7 @@ console.log(result);
 // console.log(user);
 // console.log("after");
 
-//to solve this
+////to solve this
 
 // function getvalue(id,callback)
 // {
@@ -188,28 +188,123 @@ console.log(result);
 
 ////inheritance example
 
-class Person
+// class Person
+// {
+//     constructor(name)
+//     {
+//         this.name=name;
+//     }
+// }
+
+// class Student extends Person
+// {
+//     constructor(name,id)
+//     {
+//         ////super user to set value in name
+//         super(name);
+//         this.id=id;
+//     }
+
+//     printer()
+//     {
+//         return`name is ${this.name} .id is ${this.id}`;
+//     }
+// }
+// ////creating object for Student
+// let ob1=new Student("ajay",007);
+// console.log( ob1.printer());
+
+//try catch
+
+// try {
+//     adddlert("Welcome guest!");
+//   }
+//   catch(err) {
+//     document.getElementById("demo").innerHTML = err.message;
+//   }
+
+//promise
+
+// var promise1=new Promise(function (success,reject)
+//   {
+//        const x=10;
+//        const y=10;
+//        if(x==y)
+//        {
+//            success();
+//        }
+//        else
+//        {
+//            reject();
+//        }
+//   });
+//   promise1.
+//          then(function ()
+//          {
+//              console.log("x=y");
+//          },
+//          ()=>
+//          {
+//              console.log("x and y not equle");
+//          }   
+//          );
+
+////promise witch catch block
+
+// var promise1=new Promise(function (success,reject)
+//   {
+//        const x=10;
+//        const y=10;
+//        if(x==y)
+//        {
+//            success("success");
+//        }
+//        else
+//        {
+//            reject("rejected");
+//        }
+//   });
+//   promise1
+//        .then(function(msg) { 
+//           console.log(msg+" x==y"); 
+//            }) 
+//          .catch(function(msg) { 
+//           //error handler function is invoked 
+//          console.log(msg); 
+//           });
+         
+
+////promise with asych and await
+
+async function f()
 {
-    constructor(name)
-    {
-        this.name=name;
-    }
+    let promise=new Promise((resolve,reject)=>
+     {
+         var x=10;
+         var y=10;
+         setTimeout(()=>
+            {
+                if(x==y)
+                {
+                    resolve("success");
+                }
+                else
+                {
+                    reject("rejected");
+                }
+            }
+         ,1000);
+     });
+     ////asynch function only return a promise    
+await promise.
+           then((msg)=>
+           {
+             console.log(msg);
+           }).
+           catch(function(err)
+           {
+              console.log(err);
+           })
 }
 
-class Student extends Person
-{
-    constructor(name,id)
-    {
-        ////super user to set value in name
-        super(name);
-        this.id=id;
-    }
-
-    printer()
-    {
-        return`name is ${this.name} .id is ${this.id}`;
-    }
-}
-////creating object for Student
-let ob1=new Student("ajay",007);
-console.log( ob1.printer());
+f();           
