@@ -50,7 +50,6 @@ console.log(result);
 //         console.log("squre is "+num*num)
 //     },78
 //   );
-
 // let getvalue=function(id,callback)
 // {
 //     console.log("inside get value");
