@@ -1,14 +1,15 @@
 const express=require('express');
 const chalk=require('chalk');
-const path=require("path")
-
+const path=require("path");
+const bodyparser=require('body-parser');
+const cors=require('cors');
 ////create object 
 
 // app.all('/',function(req,res){
 //   ////send just sending a data use send() for sending file use sendFile()
 //   res.sendFile(__dirname+"/src/views/index.html");
 
-  
+
 // });
 /////linking css with out a view engine
 // app.use(express.static(path.join(__dirname,"/public")));
@@ -16,9 +17,8 @@ const path=require("path")
 //   res.sendFile(path.join(__dirname,"src/views/index.html"));
 // });
 
-
 ////to add ejs change file extention of html  to .ejs
-var app=new express();
+
 
 var nav=[
   {
@@ -28,6 +28,10 @@ var nav=[
   {
     link:"/books",
     tittle:"BOOKS"
+   },
+   {
+    link:"/books/addbook",
+    tittle:"ADD BOOK"
    },
   {
     link:"/authers",
@@ -46,54 +50,28 @@ var nav=[
     tittle:"LOGIN"
   }
  ];
- var books=[
-          {
-            tittle:"book1",
-            genere:"history",
-            author:"victor hugo",
-            img:"user-icon1.png"
-          }, 
-          {
-            tittle:"book1",
-            genere:"history",
-            author:"victor hugo",
-            img:"user-icon1.png"
-          }, 
-          {
-            tittle:"book1",
-            genere:"history",
-            author:"victor hugo",
-            img:"user-icon1.png"
-          }, 
-          {
-            tittle:"book1",
-            genere:"history",
-            author:"victor hugo",
-            img:"user-icon1.png"
-          }, 
-        ];
-const booksrouter=express.Router();
-app.use('/books',booksrouter);
+ 
+var app=new express();
 
+const bookrouter=require('./src/routes/bookroute')(nav);
+const autherroute=require('./src/routes/autherroute')(nav);
 
-app.use(express.static(path.join(__dirname,"/public")));
-app.set('views','./src/views');
-app.set('view engine','ejs');
-booksrouter.route('/').get(
-  (req,res)=>{
-     res.render(
-       'books',
-       {
-        nav,tittle:"Books",books
-       }
-     )
-  });
+app.use(bodyparser.json());
+app.use(cors())
+app.use(bodyparser.urlencoded({extented:true}));/////to get value of form data
+app.use('/authers',autherroute);
+app.use('/books',bookrouter);
+app.use('/addbook',bookrouter);
 app.get('/',function(res,res){
   res.render('index',
    {
      nav:nav,tittle:"Library App"
   });
 });
+
+app.use(express.static(path.join(__dirname,"/public")));
+app.set('views','./src/views');
+app.set('view engine','ejs');
 
 ////set port 
 app.listen(3000,function(){

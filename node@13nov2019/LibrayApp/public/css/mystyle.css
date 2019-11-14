@@ -122,3 +122,43 @@ background-color: #24248f
     background-color:#24248f;
     margin-left:35%;
 }
+.bookcontiner{
+    width:80vw;
+    height:auto;
+    background-color: rgb(255, 255, 255);
+    margin-left:10vw;
+    margin-top:-25vh;
+    padding:1%;
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    border-radius:10px
+}
+.lib-textbook
+{
+    color: rgb(255, 255, 255);
+    font-weight:bold;
+    margin-left:15%;
+    margin-top:-2%;
+}
+.card-content-authers{
+    height:auto;
+    background-color:rgb(255, 253, 253);
+    padding:3%;
+    margin-left:15%;
+    margin-top:-15%;
+    margin-right:15%;
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    border-radius:3px;
+}
+.autherimage{
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+}
+.card-content-auth{
+    height:auto;
+    background-color:rgb(255, 253, 253);
+    padding:3%;
+    margin:1%;
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    border-radius:3px;
+}

@@ -16,7 +16,7 @@
                   <ul class="nav navbar-nav li-text">
                     <% for(var i=0;i<nav.length;i++){%>
                             <li><a href="<%=nav[i].link%>" class="li-text"><%=nav[i].tittle%></a></li>
-                    <%}%>
+                        <%}%>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                         <li><a href="sign-up.html" class="li-text">Sign up</a></li>
@@ -30,27 +30,30 @@
                                 <div class="emphty"></div>
                         </div>
               <div class="card-continer continer" id="card-cont">
-                  <%for(var i=0;i<books.length;i++){%>
-                    <div class="card-content">
+                <%for(var i=0;i<authers.length;i++){%>
+                    <div class="card-content-auth">
                         <table>
-                            <tr>  
-                                <td> <img src="/images/<%=books[i].img%>" class="rounded-circle" alt="Cinque Terre" width="25%" height="25%">
-                                </td> 
-                               <td>
-                                   <p class="book-head">Book name: <%=books[i].tittle%></p>
-                                   <p class="web-tittle">Auther: <%=books[i].author%></p>
+                          <center><p class="book-head"> <%=authers[i].name%></p></center>
+                            <tr>
+                              <img src="/images/authers/<%=authers[i].img%>" class="autherimage" alt="Can't load image" width="25%" height="45%">
+                            </tr>
+                            <tr>   
+                               <td>     
+                                   
+                                   <p class="web-tittle"><%=authers[i].dob%></p>
                                    <div>
-                                     <p class="para-style">genere: <%=books[i].genere%></p>  
+                                     <p class="para-style"> <%=authers[i].disc%></p>  
                                    </div>
+                                   <p class="web-tittle"><%=authers[i].books%></p>
+                                   <p class="web-tittle"><%=authers[i].awards%></p>
                                    <div>
-                                       <p class="para-style"><a href="/books/<%=i%>">Read more</a></p>
+                                       <p class="para-style"><a href="/authers/<%=i%>">Read more</a></p>
                                    </div>
                                </td>
                             </tr>
                         </table>
                      </div>
-                   <%}%> 
-              </div>
-             
+                   <%}%>      
+             </div>                 
 </body>
 </html>
