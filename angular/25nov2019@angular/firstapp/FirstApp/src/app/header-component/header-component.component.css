@@ -17,7 +17,7 @@
 {
     color: rgb(251, 251, 251);
     text-decoration:none;
-    margin-right:10px;
+    margin-right:20px;
     font-weight:bold;
     font-size:2em;
     margin-bottom:5px;
@@ -27,8 +27,7 @@ li{
     float: left;
     padding-top:40px;
     margin-bottom:5px;
-    
-}
+    }
 ul{
     margin:0px;
 }
