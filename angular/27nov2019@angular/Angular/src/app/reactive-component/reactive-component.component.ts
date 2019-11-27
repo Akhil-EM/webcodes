@@ -23,6 +23,8 @@ export class ReactiveComponentComponent implements OnInit {
   onSubmit()
   {
     this.submitted=true;
+    ///setting true;
+
     console.log(this);
     if(this.registerForm.invalid)
     {
